@@ -30,7 +30,7 @@ class AttractionController extends Controller
 
         $data = [];
         foreach($attractions as $attraction){
-            $data[] = [
+            $data = [
                 "id"=> $attraction->getId(),
                 "name" => $attraction->getName(),
                 "minage" => $attraction->getMinage(),
@@ -44,7 +44,6 @@ class AttractionController extends Controller
 
         return new JsonResponse($data);
     }
-
 
 
     /**
