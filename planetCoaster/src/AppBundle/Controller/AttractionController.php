@@ -43,7 +43,11 @@ class AttractionController extends Controller
         }
 
         return new JsonResponse($data);
-    }/**
+    }
+
+
+
+    /**
      * Lists all attraction entities.
      *
      * @Route("/{id}", name="oneattraction")
@@ -57,18 +61,18 @@ class AttractionController extends Controller
 
 
         $data = [];
-        foreach($attractions as $attraction){
-            $data[] = [
-                "id"=> $attraction->getId(),
-                "name" => $attraction->getName(),
-                "minage" => $attraction->getMinage(),
-                "waiting" => $attraction->getWaiting(),
-                "picture" => $attraction->getPicture(),
-                "bestlike" => $attraction->getBestLike(),
-                "type" => $attraction->getType(),
+
+            $data = [
+                "id"=> $attractions->getId(),
+                "name" => $attractions->getName(),
+                "minage" => $attractions->getMinage(),
+                "waiting" => $attractions->getWaiting(),
+                "picture" => $attractions->getPicture(),
+                "bestlike" => $attractions->getBestLike(),
+                "type" => $attractions->getType(),
             ];
 
-        }
+
 
         return new JsonResponse($data);
     }
