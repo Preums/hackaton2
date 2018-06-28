@@ -16,4 +16,6 @@
 /vendor/
 /web/bundles/
 .idea/
-parameters.yml.dist/
+/.idea
+.idea
+
