@@ -6,7 +6,7 @@ const URL = './img/KrustyLandMap.jpg';
 const MAP = {
   name: 'my-map',
   areas: [
-    { shape: 'poly', coords: [1036, 577, 1145, 649, 1165, 577, 1163, 512, 1089, 466, 1048, 498] },
+    { id: 0, shape: 'poly', coords: [1036, 577, 1145, 649, 1165, 577, 1163, 512, 1089, 466, 1048, 498] },
     { shape: 'circle', coords: [446, 537, 10] },
     { shape: 'circle', coords: [531, 450, 10] },
     { shape: 'circle', coords: [698, 299, 10] },
@@ -51,9 +51,22 @@ const MAP = {
 
 
 class KrustyMap extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  enterArea() {
+    this.setState({ });
+    console.log(MAP.areas.id);
+  }
+
+  leaveArea() {
+    this.setState({});
+    console.log('Leave Area -1');
+  }
 
   render() {
     return (
@@ -61,11 +74,12 @@ class KrustyMap extends React.Component {
         <ImageMapper
           src={URL}
           map={MAP}
-          // width={500}
+          width={1177}
+          height={681}
           // onLoad={() => this.load()}
           onClick={area => this.clicked(area)}
-          // onMouseEnter={area => this.enterArea(area)}
-          // onMouseLeave={area => this.leaveArea(area)}
+          onMouseEnter={area => this.enterArea(area)}
+          onMouseLeave={area => this.leaveArea(area)}
           // onImageClick={evt => this.clickedOutside(evt)}
         />
       </div>

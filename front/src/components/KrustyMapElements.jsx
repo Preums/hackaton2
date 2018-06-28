@@ -1,6 +1,6 @@
 const KrustyMapElements = () => {
   MAP = {
-    name: "KrustyMap",
+    name: 'KrustyMap',
     areas: [
       { shape: 'poly', coords: [1036, 577, 1145, 649, 1165, 577, 1163, 512, 1089, 466, 1048, 498] },
       { shape: 'circle', coords: [446, 537, 10] },
