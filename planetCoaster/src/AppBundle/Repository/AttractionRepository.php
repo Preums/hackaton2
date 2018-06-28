@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class AttractionRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+    public function getWhatYouWant()
+    {
+        $qb = $this->createQueryBuilder('a');
+        $qb->where('a.type != :type')
+            ->setParameter('type', 'zzz');
+
+        return $qb->getQuery()
+            ->getResult();
+    }
+
+
 }
