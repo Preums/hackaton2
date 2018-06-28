@@ -124,7 +124,7 @@ class PersistentDrawer extends React.Component {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerHeader} >
           <IconButton onClick={this.handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -144,14 +144,14 @@ class PersistentDrawer extends React.Component {
     }
 
     return (
-        <div className={classes.appFrame}> 
+        <div className={classes.appFrame} > 
           <AppBar
             className={classNames(classes.appBar, {
               [classes.appBarShift]: open,
               [classes[`appBarShift-${anchor}`]]: open,
             })}
           >
-            <Toolbar disableGutters={!open}>
+            <Toolbar disableGutters={!open} >
               <IconButton
                 color="inherit"
                 aria-label="open drawer"

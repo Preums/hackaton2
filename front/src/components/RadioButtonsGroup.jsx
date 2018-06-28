@@ -14,10 +14,10 @@ const styles = theme => ({
 
 class RadioButtonsGroup extends React.Component {
   state = {
-    value: 10,
-    value: 30,
-    value: 45,
-    value: 60
+    valueTen: 10,
+    valueThirty: 30,
+    valueFortyFive: 45,
+    valueSixty: 60
   };
 
   handleChange = event => {
@@ -28,7 +28,7 @@ class RadioButtonsGroup extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div style={{ background : '#FFD600' }}>
         <FormControl component="fieldset" required >
           <RadioGroup
             aria-label="gender"
