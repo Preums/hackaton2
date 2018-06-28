@@ -43,7 +43,55 @@ class AttractionController extends Controller
         }
 
         return new JsonResponse($data);
-    }/**
+    }
+
+
+    /**
+     * Lists all attraction entities.
+     *
+     * @Route("/{sensation}/{humour}/{romatinc}/{attente}/{popularite}/{name}", name="specifiqueattraction")
+     * @Method("GET")
+     */
+    public function specifiqueAttractionAction(Request $request,$sensation,$humour,$romatinc,$attente,$popularite,$name)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $true = [];
+        $false = [];
+
+
+
+        if($sensation=="true"){
+
+            $attractionTrues = $em->getRepository('AppBundle:Attraction')->findByType('zzz');
+
+            foreach($attractionTrues as $attractionTrue){
+
+                array_push($true,$attractionTrue->getName());
+            }
+
+
+        }
+    else {
+
+            $attractionFalses = $em->getRepository('AppBundle:Attraction')->getWhatYouWant();
+
+            foreach ($attractionFalses as $attractionFalse ) {
+
+
+                array_push($false, $attractionFalse->getName());
+
+            }
+        }
+
+
+        return new JsonResponse([$false,$true]);
+
+
+        }
+    /**
      * Lists all attraction entities.
      *
      * @Route("/{id}", name="oneattraction")
@@ -57,18 +105,18 @@ class AttractionController extends Controller
 
 
         $data = [];
-        foreach($attractions as $attraction){
+
             $data[] = [
-                "id"=> $attraction->getId(),
-                "name" => $attraction->getName(),
-                "minage" => $attraction->getMinage(),
-                "waiting" => $attraction->getWaiting(),
-                "picture" => $attraction->getPicture(),
-                "bestlike" => $attraction->getBestLike(),
-                "type" => $attraction->getType(),
+                "id"=> $attractions->getId(),
+                "name" => $attractions->getName(),
+                "minage" => $attractions->getMinage(),
+                "waiting" => $attractions->getWaiting(),
+                "picture" => $attractions->getPicture(),
+                "bestlike" => $attractions->getBestLike(),
+                "type" => $attractions->getType(),
             ];
 
-        }
+
 
         return new JsonResponse($data);
     }
@@ -86,7 +134,7 @@ class AttractionController extends Controller
     /**
      * Creates a new attraction entity.
      *
-     * @Route("/new", name="attraction_new")
+     * @Route("/one/new", name="attraction_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
