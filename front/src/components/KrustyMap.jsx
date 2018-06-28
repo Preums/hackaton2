@@ -1,16 +1,37 @@
 import React from 'react';
 import ImageMapper from 'react-image-mapper';
+// import KrustyMapElements from './KrustyMapElements';
 
 const URL = './img/KrustyLandMap.jpg';
 const MAP = {
   name: 'my-map',
   areas: [
-    { shape: 'poly', coords: [25, 33, 27, 300, 128, 240, 128, 94] },
-    { shape: 'poly', coords: [219, 118, 220, 210, 283, 210, 284, 119] },
-    { shape: 'poly', coords: [381, 241, 383, 94, 462, 53, 457, 282] },
-    { shape: 'poly', coords: [245, 285, 290, 285, 274, 239, 249, 238] },
+    { shape: 'poly', coords: [1036, 577, 1145, 649, 1165, 577, 1163, 512, 1089, 466, 1048, 498] },
+    { shape: 'circle', coords: [446, 537, 10] },
+    { shape: 'circle', coords: [531, 450, 10] },
+    { shape: 'circle', coords: [698, 299, 10] },
+    { shape: 'circle', coords: [490, 391, 10] },
+    { shape: 'circle', coords: [114, 346, 10] },
+    { shape: 'circle', coords: [216, 347, 10] },
+    { shape: 'circle', coords: [242, 458, 10] },
+    { shape: 'circle', coords: [368, 268, 10] },
+    { shape: 'circle', coords: [471, 310, 10] },
+    { shape: 'circle', coords: [505, 345, 10] },
+    { shape: 'circle', coords: [638, 370, 10] },
+    { shape: 'circle', coords: [684, 312, 10] },
+    { shape: 'circle', coords: [521, 270, 10] },
+    { shape: 'circle', coords: [424, 211, 10] },
+    { shape: 'circle', coords: [614, 118, 10] },
+    { shape: 'circle', coords: [582, 184, 10] },
+    { shape: 'circle', coords: [558, 229, 10] },
+    { shape: 'circle', coords: [671, 126, 10] },
+    { shape: 'circle', coords: [640, 54, 10] },
+    { shape: 'circle', coords: [950, 145, 10] },
+    { shape: 'circle', coords: [956, 165, 10] },
+    { shape: 'circle', coords: [1051, 265, 10] },
   ],
 };
+
 
 class KrustyMap extends React.Component {
   // constructor(props) {
