@@ -6,7 +6,7 @@ const isAvailable = (state = initialAvailability, action) => {
 	switch (action.type) {
 		
 		case 'IS_AVAILABLE' :
-    availabilityList = action.availabilityList;
+      availabilityList = action.availabilityList;
 			return availabilityList;
 		
 		case 'AVAILABILITY_FAILURE' :
