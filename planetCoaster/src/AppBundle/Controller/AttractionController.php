@@ -30,7 +30,7 @@ class AttractionController extends Controller
 
         $data = [];
         foreach($attractions as $attraction){
-            $data = [
+            $data[] = [
                 "id"=> $attraction->getId(),
                 "name" => $attraction->getName(),
                 "minage" => $attraction->getMinage(),
@@ -49,6 +49,51 @@ class AttractionController extends Controller
     /**
      * Lists all attraction entities.
      *
+     * @Route("/{sensation}/{humour}/{romatinc}/{attente}/{popularite}/{name}", name="specifiqueattraction")
+     * @Method("GET")
+     */
+    public function specifiqueAttractionAction(Request $request,$sensation,$humour,$romatinc,$attente,$popularite,$name)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $true = [];
+        $false = [];
+
+
+
+        if($sensation=="true"){
+
+            $attractionTrues = $em->getRepository('AppBundle:Attraction')->findByType('zzz');
+
+            foreach($attractionTrues as $attractionTrue){
+
+                array_push($true,$attractionTrue->getName());
+            }
+
+
+        }
+    else {
+
+            $attractionFalses = $em->getRepository('AppBundle:Attraction')->getWhatYouWant();
+
+            foreach ($attractionFalses as $attractionFalse ) {
+
+
+                array_push($false, $attractionFalse->getName());
+
+            }
+        }
+
+
+        return new JsonResponse([$false,$true]);
+
+
+        }
+    /**
+     * Lists all attraction entities.
+     *
      * @Route("/{id}", name="oneattraction")
      * @Method("GET")
      */
@@ -61,7 +106,7 @@ class AttractionController extends Controller
 
         $data = [];
 
-            $data = [
+            $data[] = [
                 "id"=> $attractions->getId(),
                 "name" => $attractions->getName(),
                 "minage" => $attractions->getMinage(),
@@ -89,7 +134,7 @@ class AttractionController extends Controller
     /**
      * Creates a new attraction entity.
      *
-     * @Route("/new", name="attraction_new")
+     * @Route("/one/new", name="attraction_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
