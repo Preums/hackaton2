@@ -1,4 +1,5 @@
 import React from 'react';
+import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -6,12 +7,12 @@ import Switch from '@material-ui/core/Switch';
 
 class SwitchesGroup extends React.Component {
   state = {
-    gilad: true,
-    jason: false,
-    antoine: true,
+    sensations: true,
+    Humour: false,
+    Romantic: true,
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ [name]: event.target.checked });
   };
 
@@ -22,32 +23,35 @@ class SwitchesGroup extends React.Component {
           <FormControlLabel
             control={
               <Switch
-                checked={this.state.gilad}
-                onChange={this.handleChange('gilad')}
-                value="gilad"
+                checked={this.state.sensations}
+                onChange={this.handleChange('sensations')}
+                value="sensations"
+                color="primary"
               />
             }
-            label="Gilad Gray"
+            label="Sensations"
           />
           <FormControlLabel
             control={
               <Switch
-                checked={this.state.jason}
-                onChange={this.handleChange('jason')}
-                value="jason"
+                checked={this.state.Humour}
+                onChange={this.handleChange('Humour')}
+                value="Humour"
+                color="primary"
               />
             }
-            label="Jason Killian"
+            label="Humour"
           />
           <FormControlLabel
             control={
               <Switch
-                checked={this.state.antoine}
-                onChange={this.handleChange('antoine')}
-                value="antoine"
+                checked={this.state.Romantic}
+                onChange={this.handleChange('Romantic')}
+                value="Romantic"
+                color="primary"
               />
             }
-            label="Antoine Llorca"
+            label="Romantic"
           />
         </FormGroup>
       </FormControl>

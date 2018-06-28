@@ -8,8 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SwitchLabels from './SwitchLabels';
 import SwitchesGroup from './SwitchesGroup';
+import RadioButtonsGroup from './RadioButtonsGroup'
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     width: '100%',
   },
@@ -29,7 +30,7 @@ function SimpleExpansionPanel(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <SwitchLabels label='Majeur' />
+            <SwitchLabels label="Majeur" />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -39,7 +40,7 @@ function SimpleExpansionPanel(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            
+            <SwitchesGroup />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -49,7 +50,7 @@ function SimpleExpansionPanel(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <SwitchesGroup />
+            <RadioButtonsGroup />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -59,7 +60,6 @@ function SimpleExpansionPanel(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
