@@ -5,7 +5,7 @@ import Switch from '@material-ui/core/Switch';
 
 class SwitchLabels extends React.Component {
   state = {
-    isAdult: true,
+    isAdult: true
   };
 
   handleChange = name => event => {
@@ -14,17 +14,17 @@ class SwitchLabels extends React.Component {
 
   render() {
     return (
-      <FormGroup row>
+      <FormGroup row >
         <FormControlLabel
           control={
             <Switch
               checked={this.state.isAdult}
               onChange={this.handleChange('isAdult')}
-              value="isAdult"
-              color="primary"
+              value ={this.state.isAdult}
+              color='inherit'
             />
           }
-          label={this.props.label}
+          label={this.state.isAdult?"Majeur":"Mineur"}
         />
       </FormGroup>
     );

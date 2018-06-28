@@ -25,7 +25,7 @@ class SwitchesGroup extends React.Component {
                 checked={this.state.sensations}
                 onChange={this.handleChange('sensations')}
                 value="sensations"
-                color="primary"
+                color='inherit'
               />
             }
             label="Sensations"
@@ -36,7 +36,7 @@ class SwitchesGroup extends React.Component {
                 checked={this.state.Humour}
                 onChange={this.handleChange('Humour')}
                 value="Humour"
-                color="primary"
+                color='inherit'
               />
             }
             label="Humour"
@@ -47,7 +47,7 @@ class SwitchesGroup extends React.Component {
                 checked={this.state.Romantic}
                 onChange={this.handleChange('Romantic')}
                 value="Romantic"
-                color="primary"
+                color='inherit'
               />
             }
             label="Romantic"

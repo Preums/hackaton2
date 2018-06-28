@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SwitchLabels from './SwitchLabels';
 import SwitchesGroup from './SwitchesGroup';
-import RadioButtonsGroup from './RadioButtonsGroup'
+import RadioButtonsGroup from './RadioButtonsGroup';
 import 'typeface-luckiest-guy';
 
 const styles = (theme) => ({
@@ -24,30 +24,54 @@ const styles = (theme) => ({
 function SimpleExpansionPanel(props) {
   const { classes } = props;
   return (
-    <div className={classes.root} style={{ background : '#FFD600', height : '100%' }}>
-      <ExpansionPanel style={{ background : '#FFD600' }}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
-          <Typography className={classes.heading} style={{ fontFamily : 'typeface-luckiest-guy bold', fontWeight: 'bold' }}>VOTRE AGE</Typography>
+    <div className={classes.root} style={{ background: '#FFD600' }}>
+      <ExpansionPanel style={{ background: '#FFD600' }}>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography
+            className={classes.heading}
+            style={{
+              fontFamily: 'typeface-luckiest-guy bold',
+              fontWeight: 'bold',
+            }}
+          >
+            VOTRE AGE
+          </Typography>
         </ExpansionPanelSummary>
-        {/* <ExpansionPanelDetails> */}
+        <ExpansionPanelDetails>
           <Typography>
             <SwitchLabels label="Majeur" />
           </Typography>
-        {/* </ExpansionPanelDetails> */}
+        </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={{ background : '#FFD600' }}>
+      <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading} style={{ fontFamily : 'typeface-luckiest-guy bold', fontWeight: 'bold' }}>TYPE D'ATTRACTION</Typography>
+          <Typography
+            className={classes.heading}
+            style={{
+              fontFamily: 'typeface-luckiest-guy bold',
+              fontWeight: 'bold',
+            }}
+          >
+            TYPE D'ATTRACTION
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
             <SwitchesGroup />
           </Typography>
         </ExpansionPanelDetails>
-      </ExpansionPanel >
-      <ExpansionPanel style={{ background : '#FFD600' }}>
+      </ExpansionPanel>
+      <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading} style={{ fontFamily : 'typeface-luckiest-guy bold', fontWeight: 'bold' }}>TEMPS D'ATTENTE</Typography>
+          <Typography
+            className={classes.heading}
+            style={{
+              fontFamily: 'typeface-luckiest-guy bold',
+              fontWeight: 'bold',
+            }}
+          >
+            TEMPS D'ATTENTE
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -55,13 +79,20 @@ function SimpleExpansionPanel(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={{ background : '#FFD600' }}>
+      <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading} style={{ fontFamily : 'typeface-luckiest-guy bold', fontWeight: 'bold' }}>POPULARITE</Typography>
+          <Typography
+            className={classes.heading}
+            style={{
+              fontFamily: 'typeface-luckiest-guy bold',
+              fontWeight: 'bold',
+            }}
+          >
+            POPULARITE
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-          </Typography>
+          <Typography />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

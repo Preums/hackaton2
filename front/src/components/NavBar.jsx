@@ -11,7 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import SimpleExpansionPanel from "./SimpleExpansionPanel"; 
+import SimpleExpansionPanel from "./filters/SimpleExpansionPanel"; 
 
 const drawerWidth = 240;
 
@@ -91,7 +91,7 @@ const styles = theme => ({
   },
 });
 
-class PersistentDrawer extends React.Component {
+class NavBar extends React.Component {
   state = {
     open: false,
     anchor: 'left',
@@ -124,8 +124,8 @@ class PersistentDrawer extends React.Component {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader} >
-          <IconButton onClick={this.handleDrawerClose}>
+        <div className={classes.drawerHeader} style={{ background : '#409181' }} >
+          <IconButton onClick={this.handleDrawerClose} >
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
@@ -151,7 +151,7 @@ class PersistentDrawer extends React.Component {
               [classes[`appBarShift-${anchor}`]]: open,
             })}
           >
-            <Toolbar disableGutters={!open} >
+            <Toolbar disableGutters={!open} style={{ background : '#409181' }}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -181,9 +181,9 @@ class PersistentDrawer extends React.Component {
   }
 }
 
-PersistentDrawer.propTypes = {
+NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(PersistentDrawer);
+export default withStyles(styles, { withTheme: true })(NavBar);

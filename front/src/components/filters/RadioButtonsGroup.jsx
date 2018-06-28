@@ -5,6 +5,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import 'typeface-roboto';
 
 const styles = theme => ({
   root: {
@@ -37,10 +38,10 @@ class RadioButtonsGroup extends React.Component {
             value={this.state.value}
             onChange={this.handleChange}
           >
-            <FormControlLabel value="ten" control={<Radio color="primary" />} label="10 minutes" />
-            <FormControlLabel value="thirty" control={<Radio color="primary" />} label="30 minutes" />
-            <FormControlLabel value="Forty-five" control={<Radio color="primary" />} label="45 minutes" />
-            <FormControlLabel value="sixty" control={<Radio color="primary" />} label="60 minutes" />
+            <FormControlLabel style={{ fontFamily : 'typeface-roboto' }} value="ten" control={<Radio color='inherit' />} label="< 10 minutes" />
+            <FormControlLabel value="thirty" control={<Radio color='inherit' />} label="< 30 minutes" />
+            <FormControlLabel value="Forty-five" control={<Radio color='inherit' />} label="< 45 minutes" />
+            <FormControlLabel value="sixty" control={<Radio color='inherit' />} label="< 60 minutes" />
             
           </RadioGroup>
         </FormControl>
