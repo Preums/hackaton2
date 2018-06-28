@@ -38,3 +38,6 @@ export function checkAvailability(adult, sensations, humor, romantic, waitingTim
       });
   };
 }
+export const showAttractions = () => ({
+  type: 'SHOW_ATTRACTIONS',
+});

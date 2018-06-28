@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import KrustyMap from './components/KrustyMap';
+import KrustyMap from './containers/KrustyMap';
 
 const App = () => (
   <div className="App">
