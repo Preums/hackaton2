@@ -10,6 +10,7 @@ import SwitchLabels from './SwitchLabels';
 import SwitchesGroup from './SwitchesGroup';
 import RadioButtonsGroup from './RadioButtonsGroup';
 import 'typeface-luckiest-guy';
+import Popularity from './Popularity'
 
 const styles = (theme) => ({
   root: {
@@ -92,7 +93,9 @@ function SimpleExpansionPanel(props) {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography />
+          <Typography>
+            <Popularity />
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
