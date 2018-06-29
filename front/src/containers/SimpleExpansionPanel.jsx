@@ -9,6 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SwitchLabels from '../components/filters/SwitchLabels';
 import SwitchesGroup from '../components/filters/SwitchesGroup';
 import RadioButtonsGroup from '../components/filters/RadioButtonsGroup';
+import Popularity from '../components/filters/Popularity';
 import 'typeface-luckiest-guy';
 
 const styles = (theme) => ({
@@ -34,9 +35,11 @@ class SimpleExpansionPanel extends Component {
       Humour: true,
       Romantic: true,
       isAdult: false,
+      selectedValue: 5,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
+    this.handleNotation = this.handleNotation.bind(this);
   };
 
   handleChange = (name) => (event) => {
@@ -47,80 +50,63 @@ class SimpleExpansionPanel extends Component {
     this.setState({ value: event.target.value });
   };
 
+  handleNotation = event => {
+    this.setState({ selectedValue: event.target.value });
+  };
+
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root} style={{ background: '#FFD600' }}>
         <ExpansionPanel style={{ background: '#FFD600' }}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography
-              className={classes.heading}
-              style={{
-                fontFamily: 'typeface-luckiest-guy bold',
-                fontWeight: 'bold',
-              }}
-            >
+            <Typography style={{ fontFamily: 'Luckiest Guy' }} >
               VOTRE AGE
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
+            <Typography style={{ fontFamily: 'Luckiest Guy' }} >
               <SwitchLabels label="Majeur" handleChange={this.handleChange} isAdult={this.state.isAdult} />
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel style={{ background: '#FFD600' }}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography
-              className={classes.heading}
-              style={{
-                fontFamily: 'typeface-luckiest-guy bold',
-                fontWeight: 'bold',
-              }}
-            >
+            <Typography style={{ fontFamily: 'Luckiest Guy' }} >
               TYPE D'ATTRACTION
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
+            <Typography style={{ fontFamily: 'Luckiest Guy' }} >
               <SwitchesGroup handleChange={this.handleChange} sensations={this.state.sensations} Humour={this.state.Humour} Romantic={this.state.Romantic} />
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel style={{ background: '#FFD600' }}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography
-              className={classes.heading}
-              style={{
-                fontFamily: 'typeface-luckiest-guy bold',
-                fontWeight: 'bold',
-              }}
-            >
+            <Typography style={{ fontFamily: 'Luckiest Guy'  }}  >
               TEMPS D'ATTENTE
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Typography>
+            <Typography style={{ fontFamily: 'Luckiest Guy' }} >
               <RadioButtonsGroup handleChecked={this.handleChecked} value={this.state.value} />
             </Typography>
           </ExpansionPanelDetails>
-        </ExpansionPanel>
-        <ExpansionPanel style={{ background: '#FFD600' }}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography
-              className={classes.heading}
-              style={{
-                fontFamily: 'typeface-luckiest-guy bold',
-                fontWeight: 'bold',
-              }}
-            >
-              POPULARITE
-            </Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography />
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </ExpansionPanel>
+ 
+          <ExpansionPanel style={{ background:'#FFD600' }}>
+            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography style={{ fontFamily: 'Luckiest Guy' }} >
+                POPULARITE
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Typography>
+                <Popularity handleNotation={this.handleNotation} selectedValue={this.state.selectedValue} />
+              </Typography>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
       </div>
     );
   }
