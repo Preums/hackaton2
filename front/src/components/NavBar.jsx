@@ -12,6 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import SimpleExpansionPanel from "./filters/SimpleExpansionPanel"; 
+import 'typeface-luckiest-guy';
 
 const drawerWidth = 240;
 
@@ -160,8 +161,8 @@ class NavBar extends React.Component {
               >
                 <MenuIcon />
               </IconButton>
-              <Typography variant="title" color="inherit" noWrap>
-                "Krusty Land"
+              <Typography variant="title" color="inherit" noWrap style={{fontFamily: 'Luckiest Guy'}}>
+                "KRUSTY LAND"
 
                 <img src={"../img/krusty-entier.png"}
                     width="10%"

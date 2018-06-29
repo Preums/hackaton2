@@ -10,16 +10,16 @@ import registerServiceWorker from './registerServiceWorker';
 import allReducers from './reducers/index';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(allReducers, composeEnhancers(
-  applyMiddleware(thunk),
-  persistState(),
-));
+const store = createStore(
+  allReducers,
+  composeEnhancers(applyMiddleware(thunk), persistState())
+);
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 registerServiceWorker();
