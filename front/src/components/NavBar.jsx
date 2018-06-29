@@ -162,6 +162,12 @@ class NavBar extends React.Component {
               </IconButton>
               <Typography variant="title" color="inherit" noWrap>
                 "Krusty Land"
+
+                <img src={"../img/krusty-entier.png"}
+                    width="10%"
+                    alt="Krusty"
+                  />
+      
               </Typography>
             </Toolbar>
           </AppBar>
