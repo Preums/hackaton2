@@ -13,41 +13,25 @@ const styles = theme => ({
   },
 });
 
-class RadioButtonsGroup extends React.Component {
-  state = {
-    valueTen: 10,
-    valueThirty: 30,
-    valueFortyFive: 45,
-    valueSixty: 60
-  };
-
-  handleChange = event => {
-    this.setState({ value: event.target.value });
-  };
-
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <div style={{ background : '#FFD600' }}>
-        <FormControl component="fieldset" required >
-          <RadioGroup
-            aria-label="gender"
-            name="gender2"
-            className={classes.group}
-            value={this.state.value}
-            onChange={this.handleChange}
-          >
-            <FormControlLabel style={{ fontFamily : 'typeface-roboto' }} value="ten" control={<Radio color='inherit' />} label="< 10 minutes" />
-            <FormControlLabel value="thirty" control={<Radio color='inherit' />} label="< 30 minutes" />
-            <FormControlLabel value="Forty-five" control={<Radio color='inherit' />} label="< 45 minutes" />
-            <FormControlLabel value="sixty" control={<Radio color='inherit' />} label="< 60 minutes" />
-            
-          </RadioGroup>
-        </FormControl>
-      </div>
-    );
-  }
+const RadioButtonsGroup = (props) => {
+  return (
+    <div style={{ background : '#FFD600' }}>
+      <FormControl component="fieldset" required >
+        <RadioGroup
+          aria-label="gender"
+          name="gender2"
+          className={props.classes.group}
+          value={props.value}
+          onChange={props.handleChecked}
+        >
+          <FormControlLabel style={{ fontFamily : 'typeface-roboto' }} value="ten" control={<Radio color='inherit' />} label="< 10 minutes" />
+          <FormControlLabel value="thirty" control={<Radio color='inherit' />} label="< 30 minutes" />
+          <FormControlLabel value="Forty-five" control={<Radio color='inherit' />} label="< 45 minutes" />
+          <FormControlLabel value="sixty" control={<Radio color='inherit' />} label="< 60 minutes" />
+          
+        </RadioGroup>
+      </FormControl>
+    </div>)
 }
 
 RadioButtonsGroup.propTypes = {
