@@ -181,7 +181,7 @@ class NavBar extends React.Component {
             })}
           >
             <div className={classes.drawerHeader} />
-            <Typography>{'Krusty Land'}</Typography>
+            <Typography></Typography>
            <KrustyMap />
           </main>
           {after}

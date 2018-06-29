@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import KrustyMapElements from '../components/KrustyMapElements';
 import { showAttractions } from '../actions/index';
+import SimpleModal from './SimpleModal';
 
 const URL = './img/KrustyLandMap.jpg';
 
@@ -12,22 +13,28 @@ class KrustyMap extends React.Component {
     super(props);
     this.state = {
       showModal: false,
+      title: '',
     };
+    this.handleClose = this.handleClose.bind(this);
   }
 
   clicked(area) {
-    this.setState({ showModal: true });
-    console.log(`Clicked on ${area.id}`);
+    this.setState({
+      showModal: true,
+      title: area.name,
+    });
   }
 
-  enterArea(area) {
-    this.setState({});
-    console.log(`Enter Area ${area.id}`);
+  handleClose() {
+    this.setState({ showModal: false });
   }
 
-  leaveArea(area) {
+  enterArea() {
     this.setState({});
-    console.log(`Leave Area ${area.id}`);
+  }
+
+  leaveArea() {
+    this.setState();
   }
 
   render() {
@@ -44,6 +51,7 @@ class KrustyMap extends React.Component {
           onMouseLeave={area => this.leaveArea(area)}
         // onImageClick={evt => this.clickedOutside(evt)}
         />
+        <SimpleModal showModal={this.state.showModal} handleClose={this.handleClose} title={this.state.title} />
       </div>
     );
   }
