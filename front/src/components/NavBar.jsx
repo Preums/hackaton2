@@ -13,6 +13,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import SimpleExpansionPanel from "../containers/SimpleExpansionPanel"; 
 import 'typeface-luckiest-guy';
+import KrustyMap from '../containers/KrustyMap';
 
 const drawerWidth = 240;
 
@@ -181,6 +182,7 @@ class NavBar extends React.Component {
           >
             <div className={classes.drawerHeader} />
             <Typography>{'Krusty Land'}</Typography>
+           <KrustyMap />
           </main>
           {after}
         </div>

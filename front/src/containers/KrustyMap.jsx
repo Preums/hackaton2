@@ -8,21 +8,41 @@ import { showAttractions } from '../actions/index';
 const URL = './img/KrustyLandMap.jpg';
 
 class KrustyMap extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  clicked(area) {
+    this.setState({ showModal: true });
+    console.log(`Clicked on ${area.id}`);
+  }
+
+  enterArea(area) {
+    this.setState({});
+    console.log(`Enter Area ${area.id}`);
+  }
+
+  leaveArea(area) {
+    this.setState({});
+    console.log(`Leave Area ${area.id}`);
+  }
+
   render() {
     return (
       <div>
         <ImageMapper
           src={URL}
           map={KrustyMapElements}
-          // width={500}
+          width={1177}
+          height={681}
           // onLoad={() => this.load()}
           onClick={area => this.clicked(area)}
-          // onMouseEnter={area => this.enterArea(area)}
-          // onMouseLeave={area => this.leaveArea(area)}
-          // onImageClick={evt => this.clickedOutside(evt)}
+          onMouseEnter={area => this.enterArea(area)}
+          onMouseLeave={area => this.leaveArea(area)}
+        // onImageClick={evt => this.clickedOutside(evt)}
         />
       </div>
     );
