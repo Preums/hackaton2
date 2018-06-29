@@ -10,15 +10,11 @@ import SwitchLabels from './SwitchLabels';
 import SwitchesGroup from './SwitchesGroup';
 import RadioButtonsGroup from './RadioButtonsGroup';
 import 'typeface-luckiest-guy';
-import Popularity from './Popularity'
+import Popularity from './Popularity';
 
 const styles = (theme) => ({
   root: {
     width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
   },
 });
 
@@ -26,33 +22,23 @@ function SimpleExpansionPanel(props) {
   const { classes } = props;
   return (
     <div className={classes.root} style={{ background: '#FFD600' }}>
+
       <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography
-            className={classes.heading}
-            style={{
-              fontFamily: 'typeface-luckiest-guy bold',
-              fontWeight: 'bold',
-            }}
-          >
+          <Typography style={{ fontFamily: 'Luckiest Guy' }}>
             VOTRE AGE
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <SwitchLabels label="Majeur" />
+            <SwitchLabels />
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      
       <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography
-            className={classes.heading}
-            style={{
-              fontFamily: 'typeface-luckiest-guy bold',
-              fontWeight: 'bold',
-            }}
-          >
+          <Typography style={{ fontFamily: 'Luckiest Guy' }}>
             TYPE D'ATTRACTION
           </Typography>
         </ExpansionPanelSummary>
@@ -62,15 +48,10 @@ function SimpleExpansionPanel(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+
       <ExpansionPanel style={{ background: '#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography
-            className={classes.heading}
-            style={{
-              fontFamily: 'typeface-luckiest-guy bold',
-              fontWeight: 'bold',
-            }}
-          >
+          <Typography style={{ fontFamily: 'Luckiest Guy' }}>
             TEMPS D'ATTENTE
           </Typography>
         </ExpansionPanelSummary>
@@ -80,15 +61,10 @@ function SimpleExpansionPanel(props) {
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={{ background: '#FFD600' }}>
+
+      <ExpansionPanel style={{ background:'#FFD600' }}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography
-            className={classes.heading}
-            style={{
-              fontFamily: 'typeface-luckiest-guy bold',
-              fontWeight: 'bold',
-            }}
-          >
+          <Typography style={{ fontFamily: 'Luckiest Guy' }}>
             POPULARITE
           </Typography>
         </ExpansionPanelSummary>
