@@ -7,41 +7,41 @@ const styles = {
   checked: {},
 };
 
-const Popularity = (props) => {
+function Popularity(props) {
   return (
     <div>
       <Radio
-        checked={props.selectedValue == 0}
+        checked={props.selectedValue === 0}
         onChange={props.handleNotation}
         value={0}
         color="default"
       />
       <Radio
-        checked={props.selectedValue == 1}
+        checked={props.selectedValue === 1}
         onChange={props.handleNotation}
         value={1}
         color="default"
       />
       <Radio
-        checked={props.selectedValue == 2}
+        checked={props.selectedValue === 2}
         onChange={props.handleNotation}
         value={2}
         color="default"
       />
       <Radio
-        checked={props.selectedValue == 3}
+        checked={props.selectedValue === 3}
         onChange={props.handleNotation}
         value={3}
         color="default"
       />
       <Radio
-        checked={props.selectedValue == 4}
+        checked={props.selectedValue === 4}
         onChange={props.handleNotation}
         value={4}
         color="default"
       />
       <Radio
-        checked={props.selectedValue == 5}
+        checked={props.selectedValue === 5}
         onChange={props.handleNotation}
         value={5}
         color="default"
@@ -51,7 +51,8 @@ const Popularity = (props) => {
 }
 
 Popularity.propTypes = {
-  classes: PropTypes.object.isRequired,
+  selectedValue: PropTypes.number,
+  handleNotation: PropTypes.func,
 };
 
 export default withStyles(styles)(Popularity);

@@ -42,7 +42,7 @@ class SimpleExpansionPanel extends Component {
     this.handleNotation = this.handleNotation.bind(this);
   };
 
-  handleChange = (name) => (event) => {
+  handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
 
@@ -103,7 +103,7 @@ class SimpleExpansionPanel extends Component {
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <Typography>
-                <Popularity handleNotation={this.handleNotation} selectedValue={this.state.selectedValue} />
+                <Popularity handleNotation={this.handleNotation} selectedValue={parseInt(this.state.selectedValue, 10)} />
               </Typography>
             </ExpansionPanelDetails>
           </ExpansionPanel>

@@ -14,7 +14,7 @@ const SwitchesGroup = (props) => {
               checked={props.sensations}
               onChange={props.handleChange('sensations')}
               value="sensations"
-              color='inherit'
+              color="inherit"
             />
           }
           label="Sensations"
@@ -25,7 +25,7 @@ const SwitchesGroup = (props) => {
               checked={props.Humour}
               onChange={props.handleChange('Humour')}
               value="Humour"
-              color='inherit'
+              color="inherit"
             />
           }
           label="Humour"
@@ -36,7 +36,7 @@ const SwitchesGroup = (props) => {
               checked={props.Romantic}
               onChange={props.handleChange('Romantic')}
               value="Romantic"
-              color='inherit'
+              color="inherit"
             />
           }
           label="Romantic"
@@ -44,6 +44,6 @@ const SwitchesGroup = (props) => {
       </FormGroup>
     </FormControl>
   );
-}
+};
 
 export default SwitchesGroup;
