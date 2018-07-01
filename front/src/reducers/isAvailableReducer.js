@@ -75,6 +75,10 @@ const initialAvailability = [
     id: 37, name: 'Apu\u0027s concession stand', minAge: 0, waiting: 0, picture: null, bestlike: 2, type: 'Other',
   }, {
     id: 38, name: 'Madame Manjula\u0027s future looked after', minAge: 0, waiting: 0, picture: null, bestlike: 0, type: 'Other',
+  }, {
+    id: 39, name: 'Scratchy\u0027s flea dip dipper flipper', minAge: 18, waiting: 0, picture: null, bestlike: 1, type: 'Sensations',
+  }, {
+    id: 40, name: 'Krusty\u0027s spit \u0027n watch aerial gondolas', minAge: 21, waiting: 10, picture: null, bestlike: 3, type: 'Romantic',
   },
 ];
 

@@ -14,6 +14,10 @@ import ChildCare from '@material-ui/icons/ChildCare';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
 import SentimentVerySatisfied from '@material-ui/icons/SentimentVerySatisfied';
+import Explore from '@material-ui/icons/Explore';
+import Restaurant from '@material-ui/icons/Restaurant';
+import Hotel from '@material-ui/icons/Hotel';
+import AllOut from '@material-ui/icons/AllOut';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -40,6 +44,25 @@ const styles = theme => ({
   },
 });
 
+function attractionType(type) {
+  switch (type) {
+    case 'Romantic':
+      return <FavoriteBorder />;
+    case 'Sensations':
+      return <FlightTakeoff />;
+    case 'Humor':
+      return <SentimentVerySatisfied />;
+    case 'Other':
+      return <Explore />;
+    case 'Restaurant':
+      return <Restaurant />;
+    case 'Hotel':
+      return <Hotel />;
+    default:
+      return <AllOut />;
+  }
+}
+
 function SimpleModal(props) {
   return (
     <div>
@@ -57,45 +80,27 @@ function SimpleModal(props) {
             <List component="nav">
               <ListItem>
                 <ListItemIcon>
-                  <Accessibility />
+                  {props.adult ? (<Accessibility />) : (<ChildCare />)}
                 </ListItemIcon>
-                <ListItemText primary="Adult only" />
+                <ListItemText primary={props.adult ? 'Adult only' : 'Childs allowed'} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
-                  <ChildCare />
+                  { attractionType(props.type) }
                 </ListItemIcon>
-                <ListItemText primary="Childs allowed" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <FavoriteBorder />
-                </ListItemIcon>
-                <ListItemText primary="Romantic" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <FlightTakeoff />
-                </ListItemIcon>
-                <ListItemText primary="Sensations" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <SentimentVerySatisfied />
-                </ListItemIcon>
-                <ListItemText primary="Humor" />
+                <ListItemText primary={props.type} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Update />
                 </ListItemIcon>
-                <ListItemText primary="Estimated Waiting time" />
+                <ListItemText primary={props.waiting} />
               </ListItem>
               <ListItem>
                 <ListItemIcon>
                   <Star />
                 </ListItemIcon>
-                <ListItemText primary="popularity" />
+                <ListItemText primary={props.popularity} />
               </ListItem>
             </List>
           </Typography>
@@ -106,7 +111,6 @@ function SimpleModal(props) {
   );
 }
 
-// We need an intermediary variable for handling the recursive nesting.
 const SimpleModalWrapped = withStyles(styles)(SimpleModal);
 
 export default SimpleModalWrapped;

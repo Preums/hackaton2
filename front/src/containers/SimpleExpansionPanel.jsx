@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -10,6 +12,7 @@ import SwitchLabels from '../components/filters/SwitchLabels';
 import SwitchesGroup from '../components/filters/SwitchesGroup';
 import RadioButtonsGroup from '../components/filters/RadioButtonsGroup';
 import Popularity from '../components/filters/Popularity';
+import { filtersToggler, setPopularity, setWaiting } from '../actions/index';
 import 'typeface-luckiest-guy';
 
 const styles = (theme) => ({
@@ -26,13 +29,9 @@ class SimpleExpansionPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'sixty',
-      valueTen: 10,
-      valueThirty: 30,
-      valueFortyFive: 45,
-      valueSixty: 60,
-      sensations: true,
-      Humour: true,
+      value: 60,
+      Sensations: true,
+      Humor: true,
       Romantic: true,
       isAdult: false,
       selectedValue: 5,
@@ -42,15 +41,18 @@ class SimpleExpansionPanel extends Component {
     this.handleNotation = this.handleNotation.bind(this);
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
+    this.props.filtersToggler(name);
     this.setState({ [name]: event.target.checked });
   };
 
   handleChecked = event => {
+    this.props.setWaiting(parseInt(event.target.value, 10));
     this.setState({ value: event.target.value });
   };
 
   handleNotation = event => {
+    this.props.setPopularity(parseInt(event.target.value, 10));
     this.setState({ selectedValue: event.target.value });
   };
 
@@ -78,7 +80,7 @@ class SimpleExpansionPanel extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography style={{ fontFamily: 'Luckiest Guy' }} >
-              <SwitchesGroup handleChange={this.handleChange} sensations={this.state.sensations} Humour={this.state.Humour} Romantic={this.state.Romantic} />
+              <SwitchesGroup handleChange={this.handleChange} Sensations={this.state.Sensations} Humor={this.state.Humor} Romantic={this.state.Romantic} />
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -116,4 +118,8 @@ SimpleExpansionPanel.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleExpansionPanel);
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({ filtersToggler, setPopularity, setWaiting }, dispatch)
+);
+
+export default connect(null,mapDispatchToProps) (withStyles(styles)(SimpleExpansionPanel));

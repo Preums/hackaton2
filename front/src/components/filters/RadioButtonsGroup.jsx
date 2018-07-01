@@ -24,10 +24,10 @@ const RadioButtonsGroup = (props) => {
         value={props.value}
         onChange={props.handleChecked}
       >
-        <FormControlLabel style={{ fontFamily : 'Luckies Guy' }} value="ten" control={<Radio color='inherit' />} label="< 10 minutes" />
-        <FormControlLabel value="thirty" control={<Radio color='inherit' />} label="< 30 minutes" />
-        <FormControlLabel value="Forty-five" control={<Radio color='inherit' />} label="< 45 minutes" />
-        <FormControlLabel value="sixty" control={<Radio color='inherit' />} label="< 60 minutes" />
+        <FormControlLabel style={{ fontFamily : 'Luckies Guy' }} value={10} control={<Radio color='inherit' />} label="< 10 minutes" />
+        <FormControlLabel value={30} control={<Radio color='inherit' />} label="< 30 minutes" />
+        <FormControlLabel value={45} control={<Radio color='inherit' />} label="< 45 minutes" />
+        <FormControlLabel value={60} control={<Radio color='inherit' />} label="< 60 minutes" />
         
       </RadioGroup>
     </FormControl>
