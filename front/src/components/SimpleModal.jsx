@@ -90,18 +90,22 @@ function SimpleModal(props) {
                 </ListItemIcon>
                 <ListItemText primary={props.type} />
               </ListItem>
+              { props.waiting>0 &&
               <ListItem>
                 <ListItemIcon>
                   <Update />
                 </ListItemIcon>
                 <ListItemText primary={props.waiting} />
               </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <Star />
-                </ListItemIcon>
-                <ListItemText primary={props.popularity} />
-              </ListItem>
+              }
+              { props.popularity>0 &&
+                <ListItem>
+                  <ListItemIcon>
+                    <Star />
+                  </ListItemIcon>
+                  <ListItemText primary={props.popularity} />
+                </ListItem>
+              }
             </List>
           </Typography>
           <SimpleModalWrapped />

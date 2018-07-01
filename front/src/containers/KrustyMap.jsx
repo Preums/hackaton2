@@ -17,15 +17,29 @@ class KrustyMap extends React.Component {
       adult: false,
       type: '',
       waiting: 0,
-      popularity: 5,
+      popularity: 0,
     };
     this.handleClose = this.handleClose.bind(this);
   }
 
   clicked() {
-    this.setState({
-      showModal: true,
-    });
+    const filterList = this.props.filters;
+    if (
+      (this.state.waiting > filterList.Waiting) ||
+      (parseInt(this.state.popularity, 10) < parseInt(filterList.Popularity, 10)) ||
+      (this.state.adult && !filterList.Adult) ||
+      ((this.state.type === 'Sensations') && !filterList.Sensations) ||
+      ((this.state.type === 'Humor') && !filterList.Humor) ||
+      ((this.state.type === 'Romantic') && !filterList.Romantic)
+    ) {
+      this.setState({
+        showModal: false,
+      });
+    } else {
+      this.setState({
+        showModal: true,
+      });
+    }
   }
 
   handleClose() {
@@ -39,7 +53,7 @@ class KrustyMap extends React.Component {
       adult: (parseInt(attractionInformations.minAge, 10) < 18) ? false : true,
       type: attractionInformations.type,
       waiting: attractionInformations.waiting,
-      popularity: attractionInformations.bestlike,
+      popularity: parseInt(attractionInformations.bestlike, 10),
     });
   }
 
@@ -51,11 +65,9 @@ class KrustyMap extends React.Component {
           map={KrustyMapElements}
           width={1177}
           height={681}
-          // onLoad={() => this.load()}
+          fillColor={this.state.availabilityColor}
           onClick={area => this.clicked(area)}
           onMouseEnter={area => this.enterArea(area)}
-          // onMouseLeave={area => this.leaveArea(area)}
-        // onImageClick={evt => this.clickedOutside(evt)}
         />
         <SimpleModal showModal={this.state.showModal} handleClose={this.handleClose} title={this.state.title} adult={this.state.adult} type={this.state.type} waiting={this.state.waiting} popularity={this.state.popularity} />
       </div>
@@ -65,6 +77,7 @@ class KrustyMap extends React.Component {
 
 const mapStateToProps = state => ({
   isAvailable: state.isAvailable,
+  filters: state.filters,
 });
 const mapDispatchToProps = dispatch => (
   bindActionCreators({ showAttractions }, dispatch)

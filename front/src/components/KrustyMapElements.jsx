@@ -33,7 +33,7 @@ const KrustyMapElements = {
     },
     {
       id: 5,
-      name: 'Moe\u0027s tunnel of shame',
+      name: 'Moe\u0027s tunnel of shame \u0026 rejection',
       shape: 'circle',
       coords: [838, 452, 10],
     },

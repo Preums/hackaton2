@@ -92,7 +92,7 @@ class SimpleExpansionPanel extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography style={{ fontFamily: 'Luckiest Guy' }} >
-              <RadioButtonsGroup handleChecked={this.handleChecked} value={this.state.value} />
+              <RadioButtonsGroup handleChecked={this.handleChecked} value={parseInt(this.state.value, 10)} />
             </Typography>
           </ExpansionPanelDetails>
           </ExpansionPanel>
